@@ -1,0 +1,86 @@
+{
+  "appName": "AI Interviewer",
+  "appDescription": "AI-powered technical interviewer",
+
+  "userInfo": {
+    "enabled": true,
+    "fields": [
+      {
+        "name": "username",
+        "label": "Username",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter your username"
+      },
+      {
+        "name": "age",
+        "label": "Age",
+        "type": "number",
+        "required": true,
+        "placeholder": "Enter your age"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "required": false,
+        "placeholder": "Enter your email (optional)"
+      }
+    ]
+  },
+
+  "interview": {
+    "numberOfQuestions": 5,
+    "passingScore": 4,
+    "topic": "Machine Learning and AI",
+    "autoGenerateQuestions": true,
+    "customQuestions": [
+      "What is your experience with machine learning?",
+      "Explain the difference between supervised and unsupervised learning.",
+      "What are neural networks?",
+      "How do you handle overfitting?",
+      "Describe a project you worked on."
+    ]
+  },
+
+  "speech": {
+    "enabled": true,
+    "language": "en-US",
+    "autoSpeak": true,
+    "speechRate": 1.0
+  },
+
+  "ui": {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "successColor": "#10B981",
+      "errorColor": "#EF4444",
+      "backgroundColor": "#111827",
+      "textColor": "#FFFFFF"
+    },
+    "sessionCodeDisplay": {
+      "fontSize": "8xl",
+      "showInstructions": true
+    },
+    "buttons": {
+      "showStartRecording": true,
+      "showStopRecording": true,
+      "showSubmitAnswer": true
+    }
+  },
+
+  "unity": {
+    "displayAllQuestions": false,
+    "showAnswerImmediately": true,
+    "showScoreOnly": true,
+    "autoAdvance": false
+  },
+
+  "features": {
+    "saveResponses": true,
+    "exportResults": false,
+    "timerPerQuestion": 0,
+    "allowSkip": false,
+    "showFeedback": true
+  }
+}
