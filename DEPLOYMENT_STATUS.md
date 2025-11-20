@@ -6,11 +6,12 @@ Your app has been successfully deployed to DigitalOcean App Platform.
 
 ### App Information
 
-- **App ID**: `5bfd32cd-f258-4786-93e7-1b45628b961f`
+- **App ID**: `1f947612-7a73-476c-b92f-7a2cc4729f0b`
 - **App Name**: `webaiunity`
 - **Region**: `nyc` (New York)
-- **GitHub Repository**: `Marliontechxr/WebAI`
+- **GitHub Repository**: `Marliontechxr/WebUnity`
 - **Branch**: `main`
+- **Current Deployment ID**: `a228905e-eedc-4887-a98e-b93949004050`
 
 ### Environment Variables Configured
 
@@ -31,7 +32,7 @@ Your app has been successfully deployed to DigitalOcean App Platform.
 
 2. **Check Status**: 
    - Visit: https://cloud.digitalocean.com/apps
-   - Or run: `doctl apps get 5bfd32cd-f258-4786-93e7-1b45628b961f`
+   - Or run: `doctl apps get 1f947612-7a73-476c-b92f-7a2cc4729f0b`
 
 3. **Get Your App URL**: 
    - Once deployment completes, your app will be available at:
@@ -40,12 +41,13 @@ Your app has been successfully deployed to DigitalOcean App Platform.
 
 4. **Monitor Deployment**:
    ```powershell
-   doctl apps get 5bfd32cd-f258-4786-93e7-1b45628b961f
+   doctl apps get 1f947612-7a73-476c-b92f-7a2cc4729f0b
+   doctl apps list-deployments 1f947612-7a73-476c-b92f-7a2cc4729f0b
    ```
 
 5. **View Logs** (if needed):
    ```powershell
-   doctl apps logs 5bfd32cd-f258-4786-93e7-1b45628b961f
+   doctl apps logs 1f947612-7a73-476c-b92f-7a2cc4729f0b
    ```
 
 ### Important Notes
@@ -61,8 +63,13 @@ npx convex deploy
 ```powershell
 # Edit app.yaml
 # Then update:
-doctl apps update 5bfd32cd-f258-4786-93e7-1b45628b961f --spec app.yaml
+doctl apps update 1f947612-7a73-476c-b92f-7a2cc4729f0b --spec app.yaml
 ```
+
+⚠️ **GitHub Connection**: If this is the first deployment, you may need to connect your GitHub repository through the Digital Ocean web UI:
+1. Visit: https://cloud.digitalocean.com/apps/1f947612-7a73-476c-b92f-7a2cc4729f0b
+2. Go to Settings → GitHub
+3. Connect your GitHub account and authorize access to the WebUnity repository
 
 ### Troubleshooting
 
@@ -81,21 +88,23 @@ If the deployment fails:
 
 ```powershell
 # Get app status
-doctl apps get 5bfd32cd-f258-4786-93e7-1b45628b961f
+doctl apps get 1f947612-7a73-476c-b92f-7a2cc4729f0b
 
 # View logs
-doctl apps logs 5bfd32cd-f258-4786-93e7-1b45628b961f
+doctl apps logs 1f947612-7a73-476c-b92f-7a2cc4729f0b
 
 # List deployments
-doctl apps list-deployments 5bfd32cd-f258-4786-93e7-1b45628b961f
+doctl apps list-deployments 1f947612-7a73-476c-b92f-7a2cc4729f0b
 
 # Update app (after editing app.yaml)
-doctl apps update 5bfd32cd-f258-4786-93e7-1b45628b961f --spec app.yaml
+doctl apps update 1f947612-7a73-476c-b92f-7a2cc4729f0b --spec app.yaml
 ```
 
 ---
 
-**Deployment initiated at**: 2025-11-20 05:27:37 UTC
+**Deployment initiated at**: 2025-11-20 06:03:16 UTC
+
+**Status**: Deployment in progress (BUILDING phase, 0/6 steps completed)
 
 Check your DigitalOcean dashboard for real-time deployment status: https://cloud.digitalocean.com/apps
 
