@@ -45,7 +45,7 @@ export const generateQuestions = action({
         }
 
         try {
-            const jsonMatch = content.match(/\[[\s\S]*\]/);
+            const jsonMatch = content.match(/\[.*\]/s);
             const jsonStr = jsonMatch ? jsonMatch[0] : content;
             const questions = JSON.parse(jsonStr);
             if (!Array.isArray(questions)) {
@@ -95,7 +95,7 @@ export const evaluateAnswer = action({
         }
 
         try {
-            const jsonMatch = content.match(/\{[\s\S]*\}/);
+            const jsonMatch = content.match(/\{.*\}/s);
             const jsonStr = jsonMatch ? jsonMatch[0] : content;
             const result = JSON.parse(jsonStr);
             return {
@@ -147,7 +147,7 @@ export const evaluateAnswerAction = action({
 
         if (content) {
             try {
-                const jsonMatch = content.match(/\{[\s\S]*\}/);
+                const jsonMatch = content.match(/\{.*\}/s);
                 const jsonStr = jsonMatch ? jsonMatch[0] : content;
                 const result = JSON.parse(jsonStr);
                 score = result.score;
