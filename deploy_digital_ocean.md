@@ -1,9 +1,10 @@
 # Deploying to Digital Ocean
 
-You have two main options for deploying your Next.js + Convex app to Digital Ocean:
+You have three main options for deploying your Next.js + Convex app to Digital Ocean:
 
-1.  **App Platform** (Recommended, Easiest)
-2.  **Droplet** (Virtual Machine, requires Docker)
+1.  **App Platform via CLI** (Automated, Fastest)
+2.  **App Platform via Web UI** (Recommended, Easiest)
+3.  **Droplet** (Virtual Machine, requires Docker)
 
 ## Prerequisites
 
@@ -13,14 +14,43 @@ You have two main options for deploying your Next.js + Convex app to Digital Oce
 
 2.  **GitHub Repository**: Push your code to a GitHub repository.
 
+3.  **DigitalOcean API Key**: Your API key is already configured in the deployment scripts.
+
 ---
 
-## Option 1: Digital Ocean App Platform (Recommended)
+## Option 1: Digital Ocean App Platform via CLI (Automated)
+
+This is the fastest way using the provided deployment scripts.
+
+### For Windows (PowerShell):
+```powershell
+.\deploy-do.ps1
+```
+
+### For Linux/Mac (Bash):
+```bash
+chmod +x deploy-do.sh
+./deploy-do.sh
+```
+
+The script will:
+1. Authenticate with DigitalOcean using your API key
+2. Prompt for your Convex production URL
+3. Create an app spec file or deploy directly
+4. Set up your app on App Platform
+
+**Note**: You'll need to install `doctl` CLI first:
+- Download from: https://docs.digitalocean.com/reference/doctl/how-to/install/
+- Or use: `choco install doctl` (Windows) / `brew install doctl` (Mac)
+
+---
+
+## Option 2: Digital Ocean App Platform via Web UI (Recommended)
 
 This is the easiest way. Digital Ocean will build your app from GitHub automatically.
 
 1.  **Push to GitHub**: Ensure your latest code is on GitHub.
-2.  **Go to Digital Ocean**: Log in and click **Create** -> **Apps**.
+2.  **Go to Digital Ocean**: Log in at https://cloud.digitalocean.com and click **Create** -> **Apps**.
 3.  **Choose Source**: Select **GitHub** and choose your repository.
 4.  **Configure App**:
     *   Digital Ocean should detect it as a **Next.js** app (or Dockerfile).
@@ -29,7 +59,7 @@ This is the easiest way. Digital Ocean will build your app from GitHub automatic
     *   Click **Edit** on the Environment Variables section.
     *   Add:
         *   `NEXT_PUBLIC_CONVEX_URL`: Your Convex Production URL (e.g., `https://quirky-malamute-677.convex.cloud`)
-        *   `CONVEX_DEPLOYMENT`: `prod` (optional, but good practice)
+        *   `NODE_ENV`: `production`
 6.  **Build Command**: If not using Docker, ensure build command is `npm run build`.
 7.  **Run Command**: If not using Docker, ensure run command is `npm start`.
 8.  **Deploy**: Click **Next** and **Create Resources**.
